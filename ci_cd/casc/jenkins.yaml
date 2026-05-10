@@ -1,0 +1,55 @@
+# Jenkins Configuration as Code (JCasC) for the Heart Disease MLOps demo.
+# This file is mounted at $CASC_JENKINS_CONFIG and is applied on every controller
+# start, so the admin user, security realm, and pipeline job are reproducible.
+jenkins:
+  systemMessage: "Heart Disease MLOps - Jenkins controller (JCasC managed)"
+  numExecutors: 2
+  mode: NORMAL
+  securityRealm:
+    local:
+      allowsSignup: false
+      users:
+        - id: admin
+          password: admin
+  authorizationStrategy:
+    loggedInUsersCanDoAnything:
+      allowAnonymousRead: false
+  crumbIssuer:
+    standard:
+      excludeClientIPFromCrumb: false
+
+unclassified:
+  location:
+    url: "http://localhost:8081/"
+    adminAddress: "admin@example.com"
+  timestamper:
+    allPipelines: true
+
+jobs:
+  - script: |
+      pipelineJob('heart-disease-mlops') {
+        description('Heart Disease classifier - lint, test, train, build, deploy.')
+        definition {
+          cpsScm {
+            scm {
+              git {
+                remote {
+                  // The host repo is bind-mounted read-only at /workspace
+                  // and is a real git repo (initialised on first run).
+                  url('/workspace')
+                }
+                branch('*/main')
+                extensions {
+                  // Wipe the workspace before each build so leftover .venv,
+                  // models/, etc. don't pollute subsequent runs. Avoid shallow
+                  // clones - they confuse the git plugin's cached refs when
+                  // the source is a local bind-mounted repo.
+                  wipeWorkspace()
+                }
+              }
+            }
+            scriptPath('Jenkinsfile')
+            lightweight(true)
+          }
+        }
+      }

@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/katarumu/Documents/Python/ML_OPS_Assignment/mlruns/373822186435195702/0eb86a2100084cd088eadcf266fc4f9e/artifacts
+end_time: 1778394682469
+entry_point_name: ''
+experiment_id: '373822186435195702'
+lifecycle_stage: active
+run_id: 0eb86a2100084cd088eadcf266fc4f9e
+run_name: logistic_regression
+run_uuid: 0eb86a2100084cd088eadcf266fc4f9e
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1778394671414
+status: 3
+tags: []
+user_id: katarumu

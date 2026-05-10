@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: heart-disease-api
+  namespace: mlops
+  labels:
+    app: heart-disease-api
+spec:
+  type: LoadBalancer    # set to ClusterIP if exposing via Ingress only
+  selector:
+    app: heart-disease-api
+  ports:
+    - name: http
+      port: 80
+      targetPort: 8000
+      protocol: TCP

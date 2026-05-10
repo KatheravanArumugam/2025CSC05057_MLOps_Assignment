@@ -1,0 +1,38 @@
+# Jenkins controller for the Heart Disease MLOps project.
+#
+# Build + run from the repo root:
+#   docker compose -f ci_cd/docker-compose.yml up -d --build
+#
+# Then open http://localhost:8081  (admin / admin)
+#
+# Notes:
+# - The repo is bind-mounted at /workspace; the JCasC job clones from there.
+# - The host docker daemon is mounted so the pipeline can build images on the host.
+# - Running as user 0 inside the container is a deliberate dev choice so the
+#   bundled docker CLI can talk to the host socket regardless of GID.
+services:
+  jenkins:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: heart-disease-jenkins:latest
+    container_name: heart-disease-jenkins
+    user: "0:0"
+    ports:
+      - "8081:8080"
+      - "50000:50000"
+    environment:
+      - JAVA_OPTS=-Djenkins.install.runSetupWizard=false -Dhudson.plugins.git.GitSCM.ALLOW_LOCAL_CHECKOUT=true
+      - CASC_JENKINS_CONFIG=/var/jenkins_home/casc_configs/jenkins.yaml
+    volumes:
+      - jenkins_home:/var/jenkins_home
+      # Bind-mount the JCasC file so edits to casc/jenkins.yaml are picked up
+      # on every controller restart (the named volume above masks the COPY
+      # baked into the image after first start).
+      - ./casc/jenkins.yaml:/var/jenkins_home/casc_configs/jenkins.yaml:ro
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ../:/workspace:ro
+    restart: unless-stopped
+
+volumes:
+  jenkins_home:

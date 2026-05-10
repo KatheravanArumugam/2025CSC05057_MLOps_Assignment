@@ -1,0 +1,17 @@
+# Apply only if kube-prometheus-stack is installed (CRD: ServiceMonitor).
+# Otherwise the pod annotations on Deployment can be used by a static Prometheus scrape.
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: heart-disease-api
+  namespace: mlops
+  labels:
+    release: kube-prometheus-stack
+spec:
+  selector:
+    matchLabels:
+      app: heart-disease-api
+  endpoints:
+    - port: http
+      path: /metrics
+      interval: 15s

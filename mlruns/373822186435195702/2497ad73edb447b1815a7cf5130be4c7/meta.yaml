@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/katarumu/Documents/Python/ML_OPS_Assignment/mlruns/373822186435195702/2497ad73edb447b1815a7cf5130be4c7/artifacts
+end_time: 1778310415044
+entry_point_name: ''
+experiment_id: '373822186435195702'
+lifecycle_stage: active
+run_id: 2497ad73edb447b1815a7cf5130be4c7
+run_name: random_forest
+run_uuid: 2497ad73edb447b1815a7cf5130be4c7
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1778310410769
+status: 3
+tags: []
+user_id: katarumu
