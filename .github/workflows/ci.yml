@@ -89,6 +89,9 @@ jobs:
       - name: Download data
         run: python -m src.data.download_data
 
+      - name: Reset MLflow tracking dir
+        run: rm -rf mlruns
+
       - name: Train model
         run: python -m src.models.train
 
