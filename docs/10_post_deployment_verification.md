@@ -45,6 +45,5 @@ After verification, update `reports/final_report.md` with:
 * The exact Jenkins build number that succeeded (e.g. `#42`).
 * The image tag deployed (e.g. `heart-disease-api:42`).
 * Real numbers from `models/metrics.json`.
-* Embeds of the screenshots you captured.
 
-➡️ Next: [`11_screenshot_and_video_checklist.md`](11_screenshot_and_video_checklist.md).
+➡️ Next: [`12_troubleshooting.md`](12_troubleshooting.md).

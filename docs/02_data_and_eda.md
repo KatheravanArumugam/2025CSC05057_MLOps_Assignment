@@ -1,7 +1,5 @@
 # 2️⃣ Data Acquisition & EDA
 
-Covers assignment task **1 — Data Acquisition & EDA (5 marks)**.
-
 ## 2.1 Download the dataset
 
 ```bash

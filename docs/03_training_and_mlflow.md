@@ -1,7 +1,5 @@
 # 3️⃣ Feature Engineering, Training & MLflow
 
-Covers assignment tasks **2 (8 marks)**, **3 (5 marks)**, and **4 (7 marks)**.
-
 ## 3.1 Preprocessing pipeline
 
 `src/features/preprocessing.py` builds a single sklearn `ColumnTransformer`:

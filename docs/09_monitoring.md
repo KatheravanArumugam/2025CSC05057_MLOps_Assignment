@@ -1,4 +1,4 @@
-# 9️⃣ Monitoring & Logging (Task 8, 3 marks)
+# 9️⃣ Monitoring & Logging
 
 ## 9.1 What the API exposes
 
@@ -52,11 +52,5 @@ kubectl -n monitoring port-forward svc/kube-prometheus-grafana 3000:80
 ```
 
 Re-import `monitoring/grafana/heart_disease_dashboard.json` (Dashboards → Import → Upload).
-
-## 9.4 What to capture for grading
-
-* Prometheus **Targets** page showing `heart-disease-api` UP → `screenshots/prom_targets.png`.
-* Grafana dashboard with traffic visible → `screenshots/grafana_dashboard.png`.
-* A few lines of API JSON logs (`docker logs heart-disease-api | head`) → `screenshots/api_logs.png`.
 
 ➡️ Next: [`10_post_deployment_verification.md`](10_post_deployment_verification.md).

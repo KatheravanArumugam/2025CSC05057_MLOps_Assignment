@@ -1,7 +1,5 @@
 # 4️⃣ Testing & Linting
 
-Part of assignment task **5 — CI/CD & Automated Testing (8 marks)**.
-
 ## 4.1 Run all tests
 
 ```bash

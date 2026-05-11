@@ -1,10 +1,8 @@
 # 7️⃣ Jenkins CI/CD
 
-Covers part of assignment task **5** (8 marks).
-
 ## 7.1 Install Jenkins (macOS, fastest path)
 
-### Option A — Homebrew (recommended for the assignment)
+### Option A — Homebrew (recommended)
 
 ```bash
 brew install jenkins-lts
@@ -70,11 +68,5 @@ The pipeline **fails** if lint, tests, or training error out (Production-Readine
 | `kubeconfig-cred` | Secret file | `kubeconfig` used by `kubectl` in the deploy stage |
 
 Add these via **Manage Jenkins → Credentials → System → Global**.
-
-## 7.6 What to capture for grading
-
-* Screenshot of the **pipeline graph** (all stages green) → save as `screenshots/jenkins_pipeline.png`.
-* Screenshot of the **build log** for the `Unit tests` and `Train model` stages → `screenshots/jenkins_tests.png`, `screenshots/jenkins_train.png`.
-* Screenshot of an **archived artifact** list (showing `heart_disease_model.pkl` and `metrics.json`) → `screenshots/jenkins_artifacts.png`.
 
 ➡️ Next: [`08_kubernetes.md`](08_kubernetes.md).

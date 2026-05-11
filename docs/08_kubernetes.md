@@ -1,8 +1,8 @@
-# 8️⃣ Kubernetes Deployment (Task 7, 7 marks)
+# 8️⃣ Kubernetes Deployment
 
 ## 8.1 Pick a cluster
 
-Choose **one** of these — they are equivalent for the assignment:
+Choose **one** of these — they are functionally equivalent:
 
 ### Option A — Docker Desktop's Kubernetes (easiest on macOS)
 
@@ -86,11 +86,5 @@ curl -s -X POST http://127.0.0.1:8000/predict \
 | `30-service.yaml` | Service type `LoadBalancer` exposing port 80 → 8000 |
 | `40-ingress.yaml` | Optional NGINX Ingress on `heart-disease.local` |
 | `50-servicemonitor.yaml` | Optional, requires the kube-prometheus-stack CRDs |
-
-## 8.6 What to capture for grading
-
-* `kubectl -n mlops get pods,svc` output → `screenshots/k8s_resources.png`.
-* Browser hitting `/docs` through the LoadBalancer / port-forward → `screenshots/k8s_swagger.png`.
-* A successful `/predict` call screenshot → `screenshots/k8s_predict.png`.
 
 ➡️ Next: [`09_monitoring.md`](09_monitoring.md).

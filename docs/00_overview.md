@@ -1,6 +1,5 @@
 # 📘 Heart Disease MLOps — Project Overview
 
-> **Assignment:** End-to-End ML Model Development, CI/CD, and Production Deployment (S2-25_AMLCSZG523, Total: 50 marks)
 > **Dataset:** UCI Heart Disease (Cleveland) — 303 rows, 13 features, binary `target`
 > **Production model:** Random Forest (Logistic Regression trained as baseline)
 
@@ -77,5 +76,4 @@
 8. [`08_kubernetes.md`](08_kubernetes.md) — deploying to Minikube / Docker-Desktop
 9. [`09_monitoring.md`](09_monitoring.md) — Prometheus + Grafana
 10. [`10_post_deployment_verification.md`](10_post_deployment_verification.md) — what to do **after** you deploy
-11. [`11_screenshot_and_video_checklist.md`](11_screenshot_and_video_checklist.md) — what to capture for grading
-12. [`12_troubleshooting.md`](12_troubleshooting.md) — common problems & fixes
+11. [`12_troubleshooting.md`](12_troubleshooting.md) — common problems & fixes

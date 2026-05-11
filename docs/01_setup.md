@@ -53,7 +53,6 @@ ML_OPS_Assignment/
 ├── ci_cd/                 # reserved for any CI helpers
 ├── docs/                  # ⇽ you are here
 ├── reports/               # final report + figure outputs
-├── screenshots/           # drop your screenshots here
 ├── requirements.txt
 ├── pytest.ini  .flake8  .gitignore  .dockerignore
 ├── Jenkinsfile

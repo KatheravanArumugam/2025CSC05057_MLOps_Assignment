@@ -1,4 +1,4 @@
-# 6️⃣ Docker — Containerization (Task 6, 5 marks)
+# 6️⃣ Docker — Containerization
 
 ## 6.1 Pre-flight
 
