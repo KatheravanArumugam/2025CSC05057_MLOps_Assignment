@@ -1,0 +1,16 @@
+[flake8]
+max-line-length = 120
+extend-exclude =
+    .venv,
+    .venv-ci,
+    mlruns,
+    models,
+    reports,
+    notebooks,
+    data
+# E402: module level import not at top of file
+#       (eda.py / train.py intentionally set matplotlib backend / sys.path before imports)
+# W391: blank line at end of file
+extend-ignore = E402, W391
+per-file-ignores =
+    __init__.py:F401
