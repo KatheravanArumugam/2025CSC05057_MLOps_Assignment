@@ -1,3 +1,4 @@
+
 # Heart Disease MLOps — End-to-End Project
 
 [![python](https://img.shields.io/badge/python-3.11-blue)]() [![framework](https://img.shields.io/badge/api-FastAPI-009688)]() [![tracking](https://img.shields.io/badge/tracking-MLflow-0194E2)]() [![ci](https://img.shields.io/badge/ci-Jenkins-D33833)]() [![deploy](https://img.shields.io/badge/deploy-Kubernetes-326CE5)]()
@@ -15,11 +16,11 @@ python3 -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
 
 # 2. Data + EDA
-python -m src.data.download_data
-python -m src.data.eda
+python3 -m src.data.download_data
+python3 -m src.data.eda
 
 # 3. Train (LR + RF, RF selected) + MLflow
-python -m src.models.train
+python3 -m src.models.train
 mlflow ui --backend-store-uri ./mlruns --port 5000   # http://127.0.0.1:5000
 
 # 4. Tests + lint
@@ -28,6 +29,11 @@ flake8 src tests
 
 # 5. Local API
 uvicorn src.api.app:app --reload                     # http://127.0.0.1:8000/docs
+
+# 5b. Streamlit UI (requires the API from step 5 to be running)
+streamlit run src/ui/streamlit_app.py                # http://localhost:8501
+# Point the UI at a non-default API:
+# HEART_API_URL=http://localhost:18080 streamlit run src/ui/streamlit_app.py
 
 # 6. Docker (start Docker Desktop first)
 docker build -f deployment/Dockerfile -t heart-disease-api:latest .
